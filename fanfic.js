@@ -16,3 +16,4 @@ document.getElementById("fanFicBtn").addEventListener("click", async () => {
         console.error("Error:", error);
     }
 });
+
