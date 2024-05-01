@@ -21,12 +21,12 @@ document.getElementById("plotBtn").addEventListener("click", function() {
     summarize(plotName);
 });
 
-async function summarize(plotName) {
+async function summarize(userInput) {
     const summary = document.getElementById("summary");
-    summary.textContent = "Hold tight! Generating a summary for " + plotName;
+    summary.textContent = "Hold tight! Generating a summary for " + userInput;
     
     const model = genAI.getGenerativeModel({ model: "gemini-pro"});
-    const prompt = "Summarize the show/book named " + plotName + 
+    const prompt = "Summarize the show/book named " + userInput + 
         ", make it a dictionary. Points that I want: 1. the author, published time and platforms; 2. brief summary of the story in 3 sentences; 3. main chracters' name, characteristics, brief descriptions of their stories, separete the most important characters.";
     const result = await model.generateContent(prompt);
     const response = await result.response;
