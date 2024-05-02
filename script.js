@@ -1,5 +1,4 @@
 import { GoogleGenerativeAI } from "@google/generative-ai";
-import { plotName, setPlotName } from "./module.js"
 
 const API_KEY = window.myAppConfig.GOOGLE_API_KEY;
 const genAI = new GoogleGenerativeAI(API_KEY);
@@ -12,7 +11,8 @@ document.getElementById("plotBtn").addEventListener("click", function() {
         return;
     }
 
-    setPlotName(userInput);
+    let plotName = userInput;
+    localStorage.setItem('plotName', plotName);
 
     const header = document.getElementById('mainHeader');
     header.textContent = "Welcome to --PlotPatch-- for " + plotName;
