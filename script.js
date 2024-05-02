@@ -1,4 +1,5 @@
-import { GoogleGenerativeAI } from "@google/generative-ai";
+import { GoogleGenerativeAI, HarmCategory, HarmBlockThreshold } from "@google/generative-ai";
+
 
 const API_KEY = window.myAppConfig.GOOGLE_API_KEY;
 const genAI = new GoogleGenerativeAI(API_KEY);
@@ -25,7 +26,26 @@ async function summarize(userInput) {
     const summary = document.getElementById("summary");
     summary.textContent = "Hold tight! Generating a summary for " + userInput;
     
-    const model = genAI.getGenerativeModel({ model: "gemini-pro"});
+    const safetySettings = [
+        {
+            category: HarmCategory.HARM_CATEGORY_HARASSMENT,
+            threshold: HarmBlockThreshold.BLOCK_NONE,
+          },
+          {
+            category: HarmCategory.HARM_CATEGORY_HATE_SPEECH,
+            threshold: HarmBlockThreshold.BLOCK_NONE,
+          },
+          {
+            category: HarmCategory.HARM_CATEGORY_SEXUALLY_EXPLICIT,
+            threshold: HarmBlockThreshold.BLOCK_NONE,
+          },
+          {
+            category: HarmCategory.HARM_CATEGORY_DANGEROUS_CONTENT,
+            threshold: HarmBlockThreshold.BLOCK_NONE,
+          },
+    ];
+    const model = genAI.getGenerativeModel({ model: "gemini-pro", safetySettings});
+    
     const prompt = "Summarize the show/book named " + userInput + 
         ", make it a dictionary. Points that I want: 1. the author, published time and platforms; 2. brief summary of the story in 3 sentences; 3. main chracters' name, characteristics, brief descriptions of their stories, separete the most important characters.";
     const result = await model.generateContent(prompt);
