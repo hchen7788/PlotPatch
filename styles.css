@@ -109,15 +109,30 @@ label {
     margin: 0 0 20px; /* Adds space below each paragraph, adjust as needed */
 }
 
+#chat-box {
+    width: 81%;
+    background-color: #489de754;
+    margin-left: 130px;
+}
+
 #chat-container {
-    width: 80%; /* Adjust width as needed for design */
+    width: 100%; /* Adjust width as needed for design */
     max-width: 800px; /* Maximum width of the container */
+    height: 40%;
     margin: 0 auto; /* Centers the container horizontally */
     padding: 20px; /* Adds padding inside the container */
     box-sizing: border-box; /* Includes padding in width calculation */
+    overflow-y: auto;
 }
 
 #chat-container div {
     text-align: left; /* Ensures text is left-aligned */
     margin: 0 0 20px;
+}
+
+#form-container {
+    position: absolute;
+    bottom: 0;
+    width: 80%;
+    padding-left: 130px;
 }
