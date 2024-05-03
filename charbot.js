@@ -27,15 +27,29 @@ let plotName = localStorage.getItem('plotName');
 const header = document.getElementById('charBotHeader');
 header.textContent = "Character bot for plot for " + plotName;
 
+let char = ""
+let history = ""
+
 document.getElementById("charBotBtn").addEventListener("click", async () => {
-    let char = document.getElementById("character").value.trim();
-    document.getElementById("charBotContent").textContent = "Hold tight! Starting a conversation with " + char;
+    document.getElementById("chat-container").innerHTML = "";
+    char = document.getElementById("character").value.trim();
+    history = [
+        {
+            role: "user",
+            parts: [{text: "Let's chat. I want you to mimic the tone of " + char + " in the work " + plotName + " and chat with me."}],
+        },
+        {
+            role: "model",
+            parts: [{text: "Sure, let's go. Now I am " + char + " in " + plotName}],
+        },
+    ];
 });
 
-
 async function getResponse(prompt){
-    const message = await model.generateContent(prompt);
-    const response = await message.response;
+    // const message = await model.generateContent(prompt);
+    const chat = await model.startChat({history: history});
+    const result = await chat.sendMessage(prompt);
+    const response = await result.response;
     const text = response.text();
 
     console.log(text);
@@ -47,7 +61,7 @@ export const userDiv = (data) => {
     return `
     <!-- user chat -->
             <div>
-                <p>${data}</p>
+                <p>You: ${data}</p>
             </div>
     `;
 };
@@ -79,6 +93,8 @@ async function handleSubmit(event){
 
     const aiResponse = await getResponse(prompt);
     chatArea.innerHTML += aiDiv(aiResponse);
+
+    console.log(history);
 }
 
 const chatFrom = document.getElementById("chat-form");
