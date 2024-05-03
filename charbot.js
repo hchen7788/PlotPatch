@@ -61,7 +61,7 @@ export const userDiv = (data) => {
     return `
     <!-- user chat -->
             <div>
-                <p>You: ${data}</p>
+                <p><b>You:</b> ${data}</p>
             </div>
     `;
 };
@@ -71,7 +71,7 @@ export const aiDiv = (data) => {
     return `
     <!-- ai chat -->
             <div>
-                <p>${char}: ${data}</p>
+                <p><b>${char}:</b> ${data}</p>
             </div>
     `;
 };

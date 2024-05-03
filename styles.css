@@ -38,9 +38,16 @@ header {
     text-decoration: underline; /* Underlines links on hover for better interaction */
 }
 
-h1, h2, h3 {
+h1, h3 {
     font-family: 'Bangers', cursive;
     color: #d80000;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+h2 {
+    font-family: 'Bangers', cursive;
+    color: #0074d9;
     text-transform: uppercase;
     letter-spacing: 1px;
 }
@@ -100,4 +107,17 @@ label {
 .content-container p {
     text-align: left; /* Ensures text is left-aligned */
     margin: 0 0 20px; /* Adds space below each paragraph, adjust as needed */
+}
+
+#chat-container {
+    width: 80%; /* Adjust width as needed for design */
+    max-width: 800px; /* Maximum width of the container */
+    margin: 0 auto; /* Centers the container horizontally */
+    padding: 20px; /* Adds padding inside the container */
+    box-sizing: border-box; /* Includes padding in width calculation */
+}
+
+#chat-container div {
+    text-align: left; /* Ensures text is left-aligned */
+    margin: 0 0 20px;
 }

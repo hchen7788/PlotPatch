@@ -9,6 +9,7 @@
               }
             }
         </script>
+        <link rel="stylesheet" href="styles.css">
         <script type="module" src="script.js"></script>
         <script type="module" src="modules.js"></script>
         <script type="module" src="charbot.js"></script>
@@ -18,7 +19,7 @@
     <header>
         <nav id="headernav">
             <a href="/index.html">HOME</a> |
-            <a href="/fanfic.html">FANTICS</a> |
+            <a href="/fanfic.html">FANFICS</a> |
             <a href="/charbot.html">CHARBOT</a> |
             <a href="/community.html">COMMUNITY</a> | 
             <a href="/rec.html">REC</a>
@@ -43,10 +44,12 @@
         </div>
     </div>
     <!-- prompt -->
-    <form action="" method="post" id="chat-form">
-        <textarea name="prompt" id="prompt" placeholder="Enter message here..."></textarea>
-        <button type="submit">Send</button>
-    </form>
+    <div id="form-container">
+      <form action="" method="post" id="chat-form">
+          <textarea name="prompt" id="prompt" placeholder="Enter message here..."></textarea>
+          <button type="submit">Send</button>
+      </form>
+    </div>
 
   </body>
 </html>

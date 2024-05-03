@@ -9,6 +9,7 @@
               }
             }
         </script>
+        <link rel="stylesheet" href="styles.css">
         <script type="module" src="modules.js"></script>
         <script type="module" src="rec.js"></script>
     </head>
@@ -17,7 +18,7 @@
     <header>
       <nav id="headernav">
           <a href="/index.html">HOME</a> |
-          <a href="/fanfic.html">FANTICS</a> |
+          <a href="/fanfic.html">FANFICS</a> |
           <a href="/charbot.html">CHARBOT</a> |
           <a href="/community.html">COMMUNITY</a> | 
           <a href="/rec.html">REC</a>
@@ -31,7 +32,9 @@
         <textarea name="rec-prompt" id="rec-prompt" placeholder="Recommendations based on..."></textarea>
         <button type="submit">Send</button>
     </form>
-    <pre id="rec-content">Finding similar work</pre>
+    <div class="content-container">
+      <p id="rec-content">Finding similar work</p>
+    </div>
 
   </body>
 </html>
