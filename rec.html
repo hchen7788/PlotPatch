@@ -10,6 +10,7 @@
             }
         </script>
         <script type="module" src="script.js"></script>
+        <script type="module" src="rec.js"></script>
     </head>
   <body>
 
@@ -23,12 +24,14 @@
       </nav>
     </header>
     
-    <h1 id="mainHeader">Welcome to --PlotPatch--</h1>
-    <input id="plotInput" type="text" placeholder="Enter the story you read/watched" style="width: 300px; margin-right: 10px;">
-    <button id="plotBtn">Confirm</button>
-    <br>
+    <h1 id="recHeader">Find similar work as ...</h1>
 
-    <pre id="summary">Here's a summary of the plot...</pre>
+    <h2>Recommendations</h2>
+    <form action="" method="post" id="rec-form">
+        <textarea name="rec-prompt" id="rec-prompt" placeholder="Recommendations based on..."></textarea>
+        <button type="submit">Send</button>
+    </form>
+    <p id="rec-content"></p>
 
   </body>
 </html>
