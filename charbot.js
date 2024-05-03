@@ -36,7 +36,7 @@ document.getElementById("charBotBtn").addEventListener("click", async () => {
     history = [
         {
             role: "user",
-            parts: [{text: "Let's chat. I want you to mimic the tone of " + char + " in the work " + plotName + " and chat with me."}],
+            parts: [{text: "Let's chat. In the language I input, I want you to mimic the tone of " + char + " in the work " + plotName + " and chat with me."}],
         },
         {
             role: "model",
@@ -71,7 +71,7 @@ export const aiDiv = (data) => {
     return `
     <!-- ai chat -->
             <div>
-                <p>${data}</p>
+                <p>${char}: ${data}</p>
             </div>
     `;
 };

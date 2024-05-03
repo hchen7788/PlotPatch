@@ -40,13 +40,13 @@ document.getElementById("fanFicBtn").addEventListener("click", async () => {
         let story = document.getElementById("story").value.trim();
         let more = document.getElementById("more").value.trim();
 
-        const prompt = "Generate a fan fiction story for the work " + plotName + ", here are the main characters: " + char1 + "who is the " + role1 + ", and " + char2 + ", whoe is the " + role2 + ", and they are " + relationship + ". The backgroud is " + bg + ", and the story outline is " + story + ". Here are more details: " + more;
+        const prompt = "In the language I input, generate a fan fiction story for the work " + plotName + ", here are the main characters: " + char1 + "who is the " + role1 + ", and " + char2 + ", whoe is the " + role2 + ", and they are " + relationship + ". The backgroud is " + bg + ", and the story outline is " + story + ". Here are more details: " + more;
         console.log(prompt);
         const result = await model.generateContent(prompt);
         const response = await result.response;
         const text = await response.text();
-        console.log(text);
-        document.getElementById("fanficContent").textContent = text; // Display generated text in 'content' div
+        
+        document.getElementById("fanficContent").innerHTML = mdToHtml(text); // Display generated text in 'content' div
     } catch (error) {
         console.error("Error:", error);
     }
