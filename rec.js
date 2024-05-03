@@ -8,11 +8,9 @@ const model = genAI.getGenerativeModel({ model: "gemini-pro" });
 let plotName = localStorage.getItem('plotName');
 document.getElementById('recHeader').textContent = "Find similar work as " + plotName;
 
-async function handleRecSubmit(event){
-    event.preventDefault();
-
-    let userMessage = document.getElementById("rec-prompt");
-    const recArea = document.getElementById("rec-content");
+document.getElementById('recBtn').addEventListener('click', async function() {
+    const userMessage = document.getElementById("recInput");
+    let recArea = document.getElementById("rec-content");
 
     var filter = userMessage.value.trim();
     if (filter === ''){
@@ -28,11 +26,11 @@ async function handleRecSubmit(event){
     let md_text = window.mdToHtml(text);
     recArea.innerHTML = md_text;
     userMessage.value = "";
-}
-
-const recFrom = document.getElementById("rec-form");
-recFrom.addEventListener('submit', handleRecSubmit);
-
-recFrom.addEventListener('keyup', (event)=>{
-    if (event.keyCode === 13) handleRecSubmit(event);
 })
+
+// const recFrom = document.getElementById("rec-form");
+// recFrom.addEventListener('submit', handleRecSubmit);
+
+// recFrom.addEventListener('keyup', (event)=>{
+//     if (event.keyCode === 13) handleRecSubmit(event);
+// })
