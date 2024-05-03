@@ -1,5 +1,6 @@
 import { GoogleGenerativeAI, HarmCategory, HarmBlockThreshold } from "@google/generative-ai";
 
+
 const API_KEY = window.myAppConfig.GOOGLE_API_KEY;
 const genAI = new GoogleGenerativeAI(API_KEY);
 const model = genAI.getGenerativeModel({ model: "gemini-pro" });
@@ -11,7 +12,7 @@ async function handleRecSubmit(event){
     event.preventDefault();
 
     let userMessage = document.getElementById("rec-prompt");
-    const recArea = document.getElementById("rec-container");
+    const recArea = document.getElementById("rec-content");
 
     var filter = userMessage.value.trim();
     if (filter === ''){
@@ -24,7 +25,8 @@ async function handleRecSubmit(event){
     const response = await result.response;
     const text = await response.text();
 
-    recArea.text = text;
+    let md_text = window.mdToHtml(text);
+    recArea.innerHTML = md_text;
     userMessage.value = "";
 }
 
