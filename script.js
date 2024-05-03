@@ -16,7 +16,7 @@ document.getElementById("plotBtn").addEventListener("click", function() {
     localStorage.setItem('plotName', plotName);
 
     const header = document.getElementById('mainHeader');
-    header.textContent = "Welcome to --PlotPatch-- for " + plotName;
+    header.textContent = "Welcome to PlotPatch for " + plotName;
 
     // generate summary of the plot
     summarize(plotName);

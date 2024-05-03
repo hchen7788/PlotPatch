@@ -9,6 +9,7 @@
               }
             }
         </script>
+        <link rel="stylesheet" href="styles.css">
         <script type="module" src="modules.js"></script>
         <script type="module" src="script.js"></script>
     </head>
@@ -17,19 +18,21 @@
     <header>
       <nav id="headernav">
           <a href="/index.html">HOME</a> |
-          <a href="/fanfic.html">FANTICS</a> |
+          <a href="/fanfic.html">FANFICS</a> |
           <a href="/charbot.html">CHARBOT</a> |
           <a href="/community.html">COMMUNITY</a> | 
           <a href="/rec.html">REC</a>
       </nav>
     </header>
     
-    <h1 id="mainHeader">Welcome to --PlotPatch--</h1>
+    <h1 id="mainHeader">Welcome to PlotPatch</h1>
     <input id="plotInput" type="text" placeholder="Enter the story you read/watched" style="width: 300px; margin-right: 10px;">
     <button id="plotBtn">Confirm</button>
     <br>
 
-    <pre id="summary">Here's a summary of the plot...</pre>
+    <div class="content-container">
+      <p id="summary">Here's a summary of the plot...</p>
+    </div>
 
   </body>
 </html>

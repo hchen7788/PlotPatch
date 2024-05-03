@@ -1,0 +1,103 @@
+@import url('https://fonts.googleapis.com/css2?family=Bangers&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Fredoka+One&display=swap');
+
+body, html {
+    background-color: #fff;
+    font-family: 'Arial Rounded', sans-serif;
+    color: #000;
+    text-align: center;
+    overflow-x: hidden;
+}
+
+header {
+    background-color: #0074d9a1;
+    padding: 10px 20px;
+    color: white;
+    display: flex;
+    display: flex;  /* Ensures the header itself is a flex container */
+    justify-content: center;  /* Centers all content horizontally */
+    align-items: center;
+    border-bottom: 5px solid #FF4136;
+}
+
+#headernav {
+    display: flex; /* Turns the nav into a flex container */
+    justify-content: center; /* Centers flex items horizontally within the nav */
+    list-style: none; /* Removes list styling if converted from ul/li */
+    padding: 0; /* Removes padding */
+    margin: 0; /* Removes margin */
+}
+
+#headernav a {
+    color: white; /* Sets the color of the links */
+    text-decoration: none; /* Removes underline from links */
+    padding: 0 15px; /* Adds horizontal padding between links */
+}
+
+#headernav a:hover {
+    text-decoration: underline; /* Underlines links on hover for better interaction */
+}
+
+h1, h2, h3 {
+    font-family: 'Bangers', cursive;
+    color: #d80000;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+button {
+    background-color: #ff0;
+    border: 2px solid #000;
+    border-radius: 0;
+    font-family: 'Fredoka One', cursive;
+    padding: 10px 20px;
+    cursor: pointer;
+    box-shadow: 3px 3px 0 #000;
+    transition: background-color 0.3s, transform 0.3s;
+}
+
+button:hover {
+    background-color: #f00;
+    color: #fff;
+    transform: rotate(2deg);
+}
+
+form {
+    padding: 20px;
+    background: #DDDDDD; /* Light grey for contrast */
+    border: 3px solid #000000;
+    box-shadow: 5px 5px 0 #000000;
+}
+
+input[type="text"], input[type="email"], textarea {
+    width: 100%;
+    padding: 8px;
+    margin: 8px 0;
+    box-sizing: border-box;
+    border: 2px solid #000000;
+    border-radius: 0; /* Keeping borders square for a comic book panel look */
+    transition: background-color 0.3s ease;
+}
+
+input[type="text"]:focus, input[type="email"]:focus, textarea:focus {
+    background-color: #FFFF99; /* Light yellow for focus */
+}
+
+label {
+    font-family: 'Bangers', cursive;
+    color: #001F3F;
+    text-transform: uppercase;
+}
+
+.content-container {
+    width: 80%; /* Adjust width as needed for design */
+    max-width: 800px; /* Maximum width of the container */
+    margin: 0 auto; /* Centers the container horizontally */
+    padding: 20px; /* Adds padding inside the container */
+    box-sizing: border-box; /* Includes padding in width calculation */
+}
+
+.content-container p {
+    text-align: left; /* Ensures text is left-aligned */
+    margin: 0 0 20px; /* Adds space below each paragraph, adjust as needed */
+}
