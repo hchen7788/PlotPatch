@@ -1,28 +1,25 @@
 window.mdToHtml = function(str) {
-    var tempStr = str;
-    while(tempStr.indexOf("**") !== -1) {
-        var firstPos = tempStr.indexOf("**");
-        var nextPos = tempStr.indexOf("**",firstPos + 2);
-        if(nextPos !== -1) {
-            var innerTxt = tempStr.substring(firstPos + 2,nextPos);
-            var strongified = '<strong>' + innerTxt + '</strong>';
-            tempStr = tempStr.substring(0,firstPos) + strongified + tempStr.substring(nextPos + 2,tempStr.length);
-        //get rid of unclosed '**'
-        } else {
-            tempStr = tempStr.replace('**','');
-        }
-    }
-     while(tempStr.indexOf("*") !== -1) {
-        var firstPos = tempStr.indexOf("*");
-        var nextPos = tempStr.indexOf("*",firstPos + 1);
-        if(nextPos !== -1) {
-            var innerTxt = tempStr.substring(firstPos + 1,nextPos);
-            var italicized = '<i>' + innerTxt + '</i>';
-            tempStr = tempStr.substring(0,firstPos) + italicized + tempStr.substring(nextPos + 2,tempStr.length);
-        //get rid of unclosed '*'
-        } else {
-            tempStr = tempStr.replace('*','');
-        }
-    }
-    return tempStr;
+    // Replace two newlines with paragraph tags
+    str = str.replace(/\n\n/g, '</p><p>');
+
+    // Replace single newline with <br> to create a new line within the same paragraph
+    str = str.replace(/\n/g, '<br>');
+
+    // Wrap the whole string in paragraph tags unless the string is empty
+    str = '<p>' + str + '</p>';
+
+    // Convert bold markdown to HTML <strong> tags
+    str = str.replace(/\*\*(.*?)\*\*/g, function(match, inner) {
+        return '<strong>' + inner + '</strong>';
+    });
+
+    // Convert italic markdown to HTML <i> tags
+    str = str.replace(/\*(.*?)\*/g, function(match, inner) {
+        return '<i>' + inner + '</i>';
+    });
+
+    // Remove redundant paragraph tags potentially added by double newlines at the start or end of the text
+    str = str.replace(/<p><\/p>/g, '');
+
+    return str;
 }
