@@ -22,7 +22,7 @@ These instructions will get you a copy of the project up and running on your loc
 
 ### Prerequisites
 
-Sign up for a Google AI API key.
+Sign up for a [Google AI API key](https://ai.google.dev/?utm_source=hackathon&utm_medium=referral&utm_campaign=DevPost&utm_content).
 
 Make a .js file with the following field:
 
