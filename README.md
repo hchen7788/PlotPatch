@@ -32,4 +32,8 @@ window.myAppConfig = {
 };
 ```
 
+### Get Started
+
 Start the application your way locally. For example, visit ```index.html``` from your local host.
+
+Navitage to different pages from the header navigator to play with different features.
