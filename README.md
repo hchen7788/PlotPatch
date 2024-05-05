@@ -2,6 +2,8 @@
 
 PlotPatch is an innovative web application designed to generate creative contents for stories with the support of Gemini from Google AI. This tool is perfect for writers, readers, and fans of fiction, allowing them to engage in conversations with characters from various narratives or their own creative stories, explore more community activities, and find out similar work that might be of interests. PlotPatch aims to mitigate the feelings of "blue" or "emptiness" after stories, making it a perfect tool for story lovers.
 
+[Link to demo video](https://www.youtube.com/watch?v=QvECOi7ps2Q)
+
 ## Features
 
 - **Fan Fiction Generator**: "Write" your own fan fiction stories! Instead of looking for fan fictions written by others, you can generate your own stories and determine the characters you want to see, their roles and relationships. You can also decide the story background, outlines, and more details.
